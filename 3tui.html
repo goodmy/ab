@@ -46,26 +46,8 @@ blockquote{background-color:#f5f2f0;padding:1.2em 0.6em;margin:0;border-width:1e
 <div align=center>大纪元<br>2005年1月12日</div>
 </blockquote>
 <br>
-<div align=center><img src="images/tuidang.png">" width=160 height=62></div>
+<div align=center><img src="images/tuidang.png"> </div>
 <br><br>
 
-<script>
-<!--
-var MAXNUM = 100;
-String.prototype.trim=function() {return this.replace(/^\s+|\s+$/g, "");}
-function submitMsg()
-{
-	var s = taMsg.value.trim();
-	var n = s.length;
-	if (n == 0) {alert("请输入留言！");return;}
-	if (n > MAXNUM) {alert("留言不能超过 "+MAXNUM+" 字！");return;}
-	if (!confirm("提交留言：\n\n"+s)) return;
-	s = encodeURIComponent(s.replace(/\n/g, " "));
-	window.location.href = "msgok.html?data="+s+"&v="+djb(s);
-}
-
-function charNum() {spChar.innerHTML=taMsg.value.trim().length + "/" + MAXNUM;}
-//-->
-</script>
 </body>
 </html>
