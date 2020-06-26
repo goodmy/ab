@@ -1,12 +1,11 @@
 ﻿// 修改下载的文件名和说明，每个文件一行。file 为源文件名，zw 为中文文件名（可省略），title 为文件说明。相关文件都放在 media 目录
 var g_aList1 = [
-	{file:"zhenxiang.zip",zw:"真相.zip",title:"打包下载：包括翻墙软件、电子书、图片等。zip 格式"},
-	{file:"rar-android.apk",zw:"RAR 安卓版.apk",title:"解压软件：RAR 安卓版，可解压 zip 文件"},
+	
 	{file:"zym-win.zip",zw:"自由门 - 电脑版.zip",title:"翻墙软件：自由门 - 电脑版"},
 	{file:"wjll-win.zip",zw:"无界浏览 - 电脑版.zip",title:"翻墙软件：无界浏览 - 电脑版"},
-//	{file:"fg.apk",zw:"自由门 - 安卓版.apk",title:"翻墙软件：自由门 - 安卓版"},
-	{file:"um.apk",zw:"无界一点通 - 安卓版.apk",title:"翻墙软件：无界一点通 - 安卓版"},
-	{file:"iNTD_TV.apk",zw:"新唐人电视 - 安卓版.apk",title:"翻墙软件：新唐人电视 - 安卓版"},
+//	{file:"um.apk",zw:"无界一点通 - 安卓版.apk",title:"翻墙软件：无界一点通 - 安卓版"},
+        {file:"oGate",zw:"网门 - 安卓版.apk",title:"翻墙软件：网门 - 安卓版"},
+	{file:"SzzdOgate",zw:"神州正道 - 安卓版.apk",title:"翻墙软件：神州正道 - 安卓版"},
 	{file:"vlc.apk",zw:"VLC 媒体播放器 - 安卓版.apk",title:"媒体播放器：VLC 安卓版，支持各种格式的音频和视频文件"},
 	{file:"lithium.apk",zw:"锂 EPUB 阅读器 - 安卓版.apk",title:"阅读软件：锂 EPUB 阅读器安卓版，可看 ePub 格式电子书"},
 	{file:"9ping.epub",zw:"九评共产党.epub",title:"电子书：《九评共产党》ePub 格式"},
