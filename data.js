@@ -35,7 +35,7 @@ var g_aList2 = [
 var g_aList3 = [
 	{file:"weihuo.mp4",zw:"伪火 - 天安门自焚事件真相.mp4",title:"伪火:“天安门自焚”真相"},
  //	{file:"1400li.mp4",zw:"1400例 - 京城血案的真相.mp4",title:"解析“1400例”"},
- //	{file:"hcym.mp4",zw:"红朝阴谋 - 这个星球上从未有过的邪恶.mp4",title:"红朝阴谋 - 这个星球上从未有过的邪恶"},
+ 	{file:"hcym.mp4",zw:"红朝阴谋 - 这个星球上从未有过的邪恶.mp4",title:"红朝阴谋 - 这个星球上从未有过的邪恶"},
  //	{file:"tmzg.mp4",zw:"天灭中共.mp4",title:"天灭中共（2亿）"},
  //	{file:"hzxc.mp3",zw:"活摘现场持枪警卫证词.mp3",title:"活摘现场持枪警卫证词（音频）"},
  //	{file:"bxls.mp3",zw:"薄熙来说：江主席下的命令.mp3",title:"薄熙来说：江主席下的命令（音频）"},
