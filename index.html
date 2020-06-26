@@ -21,10 +21,9 @@ img.mw{max-width:100%}
 </head>
 <body bgcolor=#f5f5d5 onload="init();">
 <script src="menu.js"></script>
-<script src="3tui.js" defer="defer"></script>
 <blockquote id=bq><br>
 <table id=tbNav cellpadding=0 cellspacing=0><tr valign=top>
-<td width=100%><a id=aList href="javascript:showItem(-1);" title="目录"><img src="images/list.png" width=28 height=32></a><span id=spSpace>　</span><a href="javascript:showHelp();" title="提示"><img src="images/help.png"></a></td>
+<td width=100%><a id=aList href="javascript:showItem(-1);" title="目录"><img src="images/list.png" width=28 height=32></a></td>
 <td align=right><a id=aPrev href="javascript:prev();" title="上一篇"><img src="images/prev.png"></a></td>
 <td align=right style="padding:2px 5px 0"><span id="spIndex" style="color:#ccc;font-size:1.25em;white-space:nowrap"></span></td>
 <td align=right><a id=aNext href="javascript:next();" title="下一篇"><img src="images/next.png"></a></td></tr></table>
@@ -658,7 +657,7 @@ IED的声明说：『中国政府企图以诬陷法轮功残害生命破坏家�
 <!--
 	var g_bFull = 0;		// 0: 窄页面 1: 宽页面
 	var g_nInit = 0;		// 打开首页时显示 0: 文章 1: 目录 2: 提示
-	var g_sTui = "我要三退";	// 三退按钮默认文字
+	
 	var g_nOrd = [1,2,3,4,5,6,7,8,9,10,11,12];	// 文章顺序，交换数字可调整顺序，删除数字不显示文章。
 	var g_sHint = "";	// 自动提示下载的说明
 	var g_sFile = "";		// 自动提示下载的文件
@@ -735,14 +734,7 @@ IED的声明说：『中国政府企图以诬陷法轮功残害生命破坏家�
 		scrollTo(0,0);
 	}
 
-	function showHelp()
-	{
-		spContent.innerHTML = g_sHelp;
-		aPrev.style.visibility = "hidden";
-		aNext.style.visibility = "visible";
-		spIndex.innerHTML = "";
-		g_nIndex = -1;
-	}
+
 
 	Array.prototype.unique=function() {var r=[],j={},n=this.length;for(var i=0;i<n;++i){if(!j[this[i]]){r.push(this[i]);j[this[i]]=1;}}return r;}
 	String.prototype.trim=function() {return this.replace(/^\s+|\s+$/g, "");}
