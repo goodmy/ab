@@ -3,7 +3,7 @@ var g_aList1 = [
 	
 	{file:"zym-win.zip",zw:"自由门 - 电脑版.zip",title:"翻墙软件：自由门 - 电脑版"},
 	{file:"wjll-win.zip",zw:"无界浏览 - 电脑版.zip",title:"翻墙软件：无界浏览 - 电脑版"},
-//	{file:"um.apk",zw:"无界一点通 - 安卓版.apk",title:"翻墙软件：无界一点通 - 安卓版"},
+	{file:"um.apk",zw:"无界一点通 - 安卓版.apk",title:"翻墙软件：无界一点通 - 安卓版"},
         {file:"oGate",zw:"网门 - 安卓版.apk",title:"翻墙软件：网门 - 安卓版"},
 	{file:"SzzdOgate",zw:"神州正道 - 安卓版.apk",title:"翻墙软件：神州正道 - 安卓版"},
 	{file:"vlc.apk",zw:"VLC 媒体播放器 - 安卓版.apk",title:"媒体播放器：VLC 安卓版，支持各种格式的音频和视频文件"},
@@ -34,11 +34,11 @@ var g_aList2 = [
 // 修改视频的文件名，中文文件名（可省略）和说明，每个文件一行。要不使用一行，可在行首加 //
 var g_aList3 = [
 	{file:"weihuo.mp4",zw:"伪火 - 天安门自焚事件真相.mp4",title:"伪火:“天安门自焚”真相"},
-	{file:"1400li.mp4",zw:"1400例 - 京城血案的真相.mp4",title:"解析“1400例”"},
-	{file:"hcym.mp4",zw:"红朝阴谋 - 这个星球上从未有过的邪恶.mp4",title:"红朝阴谋 - 这个星球上从未有过的邪恶"},
-	{file:"tmzg.mp4",zw:"天灭中共.mp4",title:"天灭中共（2亿）"},
-	{file:"hzxc.mp3",zw:"活摘现场持枪警卫证词.mp3",title:"活摘现场持枪警卫证词（音频）"},
-	{file:"bxls.mp3",zw:"薄熙来说：江主席下的命令.mp3",title:"薄熙来说：江主席下的命令（音频）"},
-	{file:"lccs.mp3",zw:"李长春说：周永康具体管这个事.mp3",title:"李长春说：周永康具体管这个事（音频）"},
-	{file:"jzzjfy.mp3",zw:"锦州中级法院刑一厅警察说.mp3",title:"锦州中级法院刑一厅警察说（音频）"},
+ //	{file:"1400li.mp4",zw:"1400例 - 京城血案的真相.mp4",title:"解析“1400例”"},
+ //	{file:"hcym.mp4",zw:"红朝阴谋 - 这个星球上从未有过的邪恶.mp4",title:"红朝阴谋 - 这个星球上从未有过的邪恶"},
+ //	{file:"tmzg.mp4",zw:"天灭中共.mp4",title:"天灭中共（2亿）"},
+ //	{file:"hzxc.mp3",zw:"活摘现场持枪警卫证词.mp3",title:"活摘现场持枪警卫证词（音频）"},
+ //	{file:"bxls.mp3",zw:"薄熙来说：江主席下的命令.mp3",title:"薄熙来说：江主席下的命令（音频）"},
+ //	{file:"lccs.mp3",zw:"李长春说：周永康具体管这个事.mp3",title:"李长春说：周永康具体管这个事（音频）"},
+ //	{file:"jzzjfy.mp3",zw:"锦州中级法院刑一厅警察说.mp3",title:"锦州中级法院刑一厅警察说（音频）"},
 ];
