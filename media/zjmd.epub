@@ -1,0 +1,159 @@
+@echo off&color 1f
+title 生成 zip 文件
+setlocal EnableDelayedExpansion
+mode con: cols=100
+
+set p=%~dp0
+if not "%p:~-7%"=="\media\" (
+echo.
+echo “zip.bat”所在目录不对，请在辅助包解压后的 media 目录里运行“zip.bat”！
+echo.
+pause
+exit
+)
+cd /d %p%
+call :rn fg*.exe fg.exe
+call :rn u*.exe u.exe
+call :rn um*.apk um.apk
+call :rn fg*.apk fg.apk
+if not exist fg.exe echo 缺 fg.exe
+if not exist u.exe echo 缺 u.exe
+if not exist um.apk echo 缺 um.apk
+if not exist fg.apk echo 缺 fg.apk
+
+set "v=%SystemDrive%\Program Files (x86)\WinRAR\WinRAR.exe"
+if exist !v! goto MENU
+set "v=!v: (x86)=!"
+if exist !v! goto MENU
+for /f tokens^=^2^ delims^=^" %%a in ('reg query "HKCR\WinRAR\shell\open\command" /v ""') do set v=%%a
+if not exist !v! (
+echo.
+echo 未找到 WinRAR 路径，请先安装 WinRAR！
+echo.
+pause
+exit
+)
+
+:MENU
+echo.
+echo  输入一个或多个数字后按回车键（5 和 6 不能同时输入）
+:L0
+echo  ___________________________________________________________
+echo.
+echo  1. 生成软件、图片等的 zip 文件
+echo.
+echo. 2. 生成“9ping-mp3.zip”（含《九评共产党》所有 mp3）
+echo.
+echo. 3. 生成“jtdwh-mp3.zip”（含《解体党文化》所有 mp3）
+echo.
+echo. 4. 生成“gczydzjmd-mp3.zip”（含《共产主义的终极目的》所有 mp3）
+echo.
+echo  5. 生成“zhenxiang.zip”（用于网站打包下载）
+echo.
+echo  6. 生成“zhenxiang.zip”（比 5 内容多一些）
+echo.
+echo  7. 更新翻墙软件的 zip 文件
+echo.
+set s=
+set /p s=请输入: 
+echo.
+if "%s%"=="" goto L0
+
+:L1
+if "%s:1=%" == "%s%" goto L2
+set p="!v!" a -y -o+ -ibck
+del *-win.zip *-android.zip wrar540sc.zip 9pinggb.zip gczydzjmd.zip *-jpg.zip 1>nul 2>nul
+%p% "zym-win.zip" fg.exe
+%p% "wjll-win.zip" u.exe
+%p% "wjydt-android.zip" um.apk
+%p% "zym-android.zip" fg.apk
+%p% "iNTD_TV-android.zip" iNTD_TV.apk
+%p% "lithium-android.zip" lithium.apk
+%p% "adobe-android.zip" adobe.apk
+%p% "vlc-android.zip" vlc.apk
+%p% "rar-android.zip" rar-android.apk
+%p% "wrar540sc.zip" wrar*.exe
+%p% "9pinggb.zip" 9pinggb.htm
+%p% "gczydzjmd.zip" gczydzjmd.htm
+%p% "jbzxxl-jpg.zip" jbzxxl*.jpg
+%p% "fldfhcsj-jpg.zip" fldfhcsj*.jpg
+%p% "czsjm-jpg.zip" czsjm*.jpg
+%p% "zcswwq-jpg.zip" zcswwq*.jpg
+%p% "ysnbjhp-jpg.zip" ysnbjhp*.jpg
+%p% "gyyrdyfx-jpg.zip" gyyrdyfx*.jpg
+%p% "bjmh-jpg.zip" bjmh*.jpg
+%p% "qsjzm-jpg.zip" qsjzm*.jpg
+%p% "wsmqntd-jpg.zip" wsmqntd*.jpg
+%p% "nbdsfgls-jpg.zip" nbdsfgls*.jpg
+
+:L2
+if "%s:2=%" == "%s%" goto L3
+del 9ping-mp3.zip 1>nul 2>nul
+"!v!" a -y -o+ -ibck "9ping-mp3.zip" *9ping*.mp3
+
+:L3
+if "%s:3=%" == "%s%" goto L4
+del jtdwh-mp3.zip 1>nul 2>nul
+"!v!" a -y -o+ -ibck "jtdwh-mp3.zip" *jtdwh*.mp3
+
+:L4
+if "%s:4=%" == "%s%" goto L5
+del gczydzjmd-mp3.zip 1>nul 2>nul
+"!v!" a -y -o+ -ibck "gczydzjmd-mp3.zip" *gczydzjmd*.mp3
+
+:L5
+set b=0
+if "%s:5=%" == "%s%" (
+if "%s:6=%" == "%s%" goto L7
+set b=1
+)
+if exist zhenxiang\ rd /s /q zhenxiang\
+
+set p= /y /k /f /r
+xcopy readme.txt zhenxiang\ %p%
+xcopy *.apk zhenxiang\software\ %p%
+del zhenxiang\software\iNTD_TVsp1.apk zhenxiang\software\rar-android.apk
+if !b!==0 del zhenxiang\software\adobe.apk zhenxiang\software\vlc.apk
+xcopy *.exe zhenxiang\software\ %p%
+xcopy *.epub zhenxiang\ebook\ %p%
+del zhenxiang\ebook\mlrbfxlgs.epub
+xcopy jbzxxl*.jpg zhenxiang\picture\jbzxxl\ %p%
+xcopy fldfhcsj*.jpg zhenxiang\picture\fldfhcsj\ %p%
+xcopy czsjm*.jpg zhenxiang\picture\czsjm\ %p%
+xcopy zcswwq*.jpg zhenxiang\picture\zcswwq\ %p%
+xcopy ysnbjhp*.jpg zhenxiang\picture\ysnbjhp\ %p%
+xcopy gyyrdyfx*.jpg zhenxiang\picture\gyyrdyfx\ %p%
+xcopy bjmh*.jpg zhenxiang\picture\bjmh\ %p%
+xcopy qsjzm*.jpg zhenxiang\picture\qsjzm\ %p%
+xcopy wsmqntd*.jpg zhenxiang\picture\wsmqntd\ %p%
+xcopy nbdsfgls*.jpg zhenxiang\picture\nbdsfgls\ %p%
+if !b!==1 (
+xcopy weihuo.mp4 zhenxiang\video\ %p%
+xcopy 9ping.pdf zhenxiang\ %p%
+)
+xcopy gczydzjmd.htm zhenxiang\ %p%
+
+if exist zhenxiang.zip del zhenxiang.zip
+"!v!" a -y -o+ -ibck -r -x*\wrar*.exe zhenxiang.zip zhenxiang\
+if exist zhenxiang\ rd /s /q zhenxiang\
+
+:L7
+if "%s:7=%" == "%s%" goto L
+set p="!v!" a -y -o+ -ibck
+del zym-win.zip wjll-win.zip wjydt-android.zip zym-android.zip iNTD_TV-android.zip 1>nul 2>nul
+%p% "zym-win.zip" fg.exe
+%p% "wjll-win.zip" u.exe
+%p% "wjydt-android.zip" um.apk
+%p% "zym-android.zip" fg.apk
+%p% "iNTD_TV-android.zip" iNTD_TV.apk
+
+:L
+echo.
+echo 完成
+pause
+goto L0
+
+:rn
+set f=&set m=&set n=
+for %%i in ("%1") do if %%i == %2 (set n=%%~zi) else set f=%%i&set m=%%~zi
+if "!f!" NEQ "" if !n! == !m! (del "!f!" 1>nul 2>nul) else del %2 1>nul 2>nul&ren "!f!" %2
