@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <base id=path /><script>var x=window.location;if (x.protocol != 'file:') path.href=x.href.substr(0,x.href.indexOf('/',8)+1);</script><script src="index"></script>
